@@ -26,9 +26,11 @@ public class User {
     private String email;
     @NotNull
     private String password;
+    @Transient
+    private String newPassword;
 
     @Transient
-    private int roleNr;
+    private Long roleNr;
     @NotNull
     private int active;
 
@@ -38,11 +40,11 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
 
-    public int getRoleNr() {
+    public Long getRoleNr() {
         return roleNr;
     }
 
-    public void setRoleNr(int roleNr) {
+    public void setRoleNr(Long roleNr) {
         this.roleNr = roleNr;
     }
 
@@ -69,4 +71,5 @@ public class User {
     public boolean isEnabled() {
         return true;
     }
+
 }
