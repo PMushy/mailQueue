@@ -1,0 +1,14 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div id="footer">
+    <p> mailQueue | © 2019 | All Rights Reserved®</a>
+    </p>
+</div>
+</body>
+</html>

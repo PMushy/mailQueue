@@ -51,9 +51,6 @@ public class RegisterController {
 
             returnPage = "/login";
         }
-
         return returnPage;
     }
-
-
 }

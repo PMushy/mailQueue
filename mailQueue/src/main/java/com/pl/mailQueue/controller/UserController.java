@@ -30,7 +30,7 @@ public class UserController {
     MessageSource messageSource;
 
     @GetMapping("/profil")
-    @Secured(value = {"ROLE_ADMIN", "ROLE_USER", "ROLE_ADMIN_SHELTER"})
+    @Secured(value = {"ROLE_ADMIN", "ROLE_USER"})
     public String showUserProfilePage(Model model) {
         String userName = UserUtilities.getLoggedUser();
 
@@ -40,7 +40,6 @@ public class UserController {
         user.setRoleNr(roleNr);
         model.addAttribute("user", user);
         return "user/profil";
-
     }
 
     @GetMapping("/edit-password")
@@ -78,6 +77,7 @@ public class UserController {
     @GetMapping("/admin")
     @Secured(value = {"ROLE_ADMIN"})
     public String showAdminPage() {
+
         return "user/admin";
     }
 
@@ -88,7 +88,6 @@ public class UserController {
         model.addAttribute("userList", userList);
         return "user/users";
     }
-
 
     private List<User> getAllUsers() {
         List<User> userList = userServiceInterface.findAll();

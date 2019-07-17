@@ -19,11 +19,14 @@ public class User {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
     private Long id;
+
+    @NotNull
     private String nick;
 
     @NotNull
     @Email
     private String email;
+
     @NotNull
     private String password;
     @Transient
@@ -53,7 +56,7 @@ public class User {
     }
 
     public String getUsername() {
-        return nick;
+        return email;
     }
 
     public boolean isAccountNonExpired() {
