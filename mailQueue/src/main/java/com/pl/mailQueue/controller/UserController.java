@@ -15,17 +15,22 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 import java.util.Locale;
 
 @Controller
 @RequiredArgsConstructor
+@RequestMapping("/user")
 public class UserController {
+
     @Autowired
     private UserServiceInterface userServiceInterface;
+
     @Autowired
     private ChangePasswordValidator changePasswordValidator;
+
     @Autowired
     MessageSource messageSource;
 
@@ -84,20 +89,16 @@ public class UserController {
     @GetMapping("/users")
     @Secured(value = {"ROLE_ADMIN"})
     public String openAdminUsersPage(Model model) {
-        List<User> userList = getAllUsers();
-        model.addAttribute("userList", userList);
-        return "user/users";
-    }
-
-    private List<User> getAllUsers() {
         List<User> userList = userServiceInterface.findAll();
         for (User users : userList) {
 
             Long nrRoli = users.getRoles().iterator().next().getId();
             users.setRoleNr(nrRoli);
         }
-        return userList;
+        model.addAttribute("userList", userList);
+        return "user/users";
     }
+
 
     @GetMapping("/delete/{id}")
     public String deleteUserById(@PathVariable("id") Long id) {

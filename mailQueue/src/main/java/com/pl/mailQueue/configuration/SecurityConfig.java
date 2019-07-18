@@ -3,6 +3,7 @@ package com.pl.mailQueue.configuration;
 import com.pl.mailQueue.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.method.configuration.EnableGlobalMethodSecurity;
@@ -10,7 +11,11 @@ import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.User;
+import org.springframework.security.core.userdetails.UserDetails;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.provisioning.InMemoryUserDetailsManager;
 import org.springframework.security.web.util.matcher.AntPathRequestMatcher;
 
 import javax.sql.DataSource;
@@ -44,12 +49,13 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         httpSec
                 .authorizeRequests()
                 .antMatchers("/").permitAll()
-                .antMatchers("/index").permitAll()
+                .antMatchers("/index").hasAuthority("ROLE_ADMIN")
+//                .antMatchers("/index").permitAll()
                 .antMatchers("/register/**").permitAll()
                 .antMatchers("/login").permitAll()
                 .antMatchers("/h2-console/**").permitAll()
                 .antMatchers("/src/main/resources/static/images/**").permitAll()
-//                .antMatchers("/admin").hasAuthority("ROLE_ADMIN")
+                .antMatchers("/admin").hasAuthority("ROLE_ADMIN")
                 .antMatchers("/adduser").permitAll()
                 .antMatchers("/user/**").permitAll()
                 .anyRequest().authenticated()
@@ -64,7 +70,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     public void configure(WebSecurity webSec) {
         webSec.ignoring()
-                .antMatchers("/resources/**", "/static/**", "/js/**",
+                .antMatchers("/resources/**",
                         "/src/main/webapp/WEB-INF/jsp/fragments/**");
     }
 

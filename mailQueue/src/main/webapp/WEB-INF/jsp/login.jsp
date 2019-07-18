@@ -26,7 +26,7 @@
                 Username
             </td>
             <td align="left">
-                <input type="text" name="username" id="email"
+                <input type="text" name="username" id="username"
                        size="30"/>
             </td>
         </tr>

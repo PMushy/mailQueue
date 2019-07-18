@@ -16,15 +16,15 @@
 <div id="header">
     <nav class="navigation">
         <ul class="menu">
+            <li><a href="/index">Main page</a></li>
+
             <sec:authorize access="hasRole('ROLE_ADMIN')">
-                <li><a href="/admin">Admin</a></li>
+                <li><a href="/user/admin">Admin</a></li>
             </sec:authorize>
 
             <sec:authorize access="hasRole('ROLE_ADMIN')">
                 <li><a href="/create/mail">New mail</a></li>
             </sec:authorize>
-
-            <li><a href="/index">Main page</a></li>
 
             <sec:authorize access="hasRole('ANONYMOUS')">
                 <li><a href="/login">Login</a>&nbsp;&nbsp;</li>
@@ -32,7 +32,7 @@
             </sec:authorize>
 
             <sec:authorize access="isAuthenticated()">
-                <li><a href="/profil">Profil</a></li>
+                <li><a href="/user/profil">Profil</a></li>
                 <li><a href="/logout">Logout</a></li>
             </sec:authorize>
         </ul>
