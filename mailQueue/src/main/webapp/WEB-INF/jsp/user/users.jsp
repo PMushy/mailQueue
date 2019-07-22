@@ -38,10 +38,10 @@
 			<td align="center">
 				<c:choose>
 					<c:when test="${u.active == 1 }">
-						<font color="green"><s:message code="word.tak"/></font>
+						<font color="green">Yes</font>
 					</c:when>
 					<c:otherwise>
-						<font color="red"><s:message code="word.nie"/></font>
+						<font color="red">No</font>
 					</c:otherwise>
 				</c:choose>
 			</td>

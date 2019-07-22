@@ -28,26 +28,18 @@ public class MailController {
 
     @GetMapping("/mail")
     @Secured(value = {"ROLE_ADMIN", "ROLE_USER"})
-    public String newMail(Model model) {
+    public String newMail(Model model, User user) {
         Mail mail = new Mail();
+        String email = user.getEmail();
         model.addAttribute("mail", mail);
-        return "mail";
+        model.addAttribute("email", email);
+        return "/mail";
     }
 
     @GetMapping("/send-mail")
     @Secured(value = {"ROLE_ADMIN", "ROLE_USER"})
-    public String sendMail(User user, BindingResult result, Model model, Mail mail) {
-        String returnPage;
-        String email = user.getEmail();
-        if (result.hasErrors()) {
-            returnPage = "/mail";
-        } else {
-            mailService.saveMail(mail);
-            model.addAttribute("message", "Mail send");
-            model.addAttribute("email", email);
-
-            returnPage = "/index";
-        }
-        return returnPage;
+    public String sendMail(Mail mail) {
+        mailService.saveMail(mail);
+        return "/index";
     }
 }

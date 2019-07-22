@@ -18,7 +18,8 @@ public class Mail {
     private String[] recipients;
     // Nie jestem pewien jak jest adresat i nadawca po angielsku
     @Transient
-    private String senderMail;
+    private String sender;
 
+    private String title;
     private String message;
 }

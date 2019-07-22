@@ -10,10 +10,13 @@ public class LoginPageController {
 
     @GetMapping(value = "/login")
     public String showLoginPage() {
-
         return "login";
     }
 
+    @GetMapping("/")
+    public String showMainPage() {
+        return "index";
+    }
 
 }
 
