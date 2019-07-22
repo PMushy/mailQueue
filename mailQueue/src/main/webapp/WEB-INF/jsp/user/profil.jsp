@@ -1,13 +1,13 @@
 <%@ page language="java" contentType="text/html;charset=UTF-8"
-         pageEncoding="UTF-8"%>
-<%@ taglib prefix="s"  uri="http://www.springframework.org/tags"%>
+         pageEncoding="UTF-8" %>
+<%@ taglib prefix="s" uri="http://www.springframework.org/tags" %>
 <%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" type="text/css" href="/resources/css/style.css" />
+    <link rel="stylesheet" type="text/css" href="/resources/css/style.css"/>
     <link rel="stylesheet" href="/resources/css/main.css"/>
     <title><s:message code="profil.userDane"/></title>
 </head>
@@ -21,42 +21,32 @@
 
     <tr>
         <td width="130" align="right">
-            <s:message code="register.email"/>
+            Email
         </td>
         <td width="270" align="left">
             <c:out value="${user.email}"/>
         </td>
     </tr>
-
     <tr>
         <td width="130" align="right">
-            <s:message code="register.name"/>
+            Nick:
         </td>
         <td width="270" align="left">
-            <c:out value="${user.firstName}"/>
+            <c:out value="${user.nick}"/>
         </td>
     </tr>
 
     <tr>
         <td width="130" align="right">
-            <s:message code="register.lastName"/>
-        </td>
-        <td width="270" align="left">
-            <c:out value="${user.lastName}"/>
-        </td>
-    </tr>
-
-    <tr>
-        <td width="130" align="right">
-            <s:message code="profil.czyAktywny"/>
+            Active:
         </td>
         <td width="270" align="left">
             <c:choose>
                 <c:when test="${user.active == 1}">
-                    <s:message code="word.tak"/>
+                    Yes
                 </c:when>
                 <c:otherwise>
-                    <s:message code="word.nie"/>
+                    No
                 </c:otherwise>
             </c:choose>
         </td>
@@ -64,7 +54,7 @@
 
     <tr>
         <td width="130" align="right">
-            <s:message code="profil.rola"/>
+            Role:
         </td>
         <td width="270" align="left">
             <c:choose>
@@ -83,14 +73,14 @@
 <table width="500" border="0" cellpadding="4" cellspacing="1" align="center">
 
     <%--<tr>--%>
-        <%--<td align="center">--%>
-            <%--<input type="button" value="<s:message code="button.edycjaProfilu"/>"--%>
-                   <%--onclick="window.location.href='${pageContext.request.contextPath}/editprofil'"/>--%>
-        <%--</td>--%>
-        <td align="center">
-            <input type="button" value="<s:message code="button.zmianaHasla"/>"
-                   onclick="window.location.href='${pageContext.request.contextPath}/edit-password'"/>
-        </td>
+    <%--<td align="center">--%>
+    <%--<input type="button" value="<s:message code="button.edycjaProfilu"/>"--%>
+    <%--onclick="window.location.href='${pageContext.request.contextPath}/editprofil'"/>--%>
+    <%--</td>--%>
+    <td align="center">
+        <input type="button" value="<s:message code="button.zmianaHasla"/>"
+               onclick="window.location.href='${pageContext.request.contextPath}/edit-password'"/>
+    </td>
     <%--</tr>--%>
 </table>
 

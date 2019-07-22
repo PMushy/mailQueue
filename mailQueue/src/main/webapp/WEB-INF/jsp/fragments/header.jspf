@@ -21,7 +21,7 @@
             </sec:authorize>
 
             <sec:authorize access="hasRole('ROLE_ADMIN')">
-                <li><a href="/create/mail">New mail</a></li>
+                <li><a href="/mail">New mail</a></li>
             </sec:authorize>
 
             <li><a href="/index">Main page</a></li>
