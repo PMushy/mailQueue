@@ -18,6 +18,7 @@
 </div>
 
 <table width="500" border="0" cellpadding="4" cellspacing="1" align="center">
+
     <tr>
         <td width="130" align="right">
             <s:message code="register.email"/>
@@ -28,15 +29,16 @@
     </tr>
     <tr>
         <td width="130" align="right">
-            <s:message code="register.name"/>
+            Nick:
         </td>
         <td width="270" align="left">
             <c:out value="${user.nick}"/>
         </td>
     </tr>
+
     <tr>
         <td width="130" align="right">
-            <s:message code="profil.czyAktywny"/>
+            Active:
         </td>
         <td width="270" align="left">
             <c:choose>
@@ -47,7 +49,7 @@
     </tr>
     <tr>
         <td width="130" align="right">
-            <s:message code="profil.rola"/>
+            Role:
         </td>
         <td width="270" align="left">
             <c:choose>
