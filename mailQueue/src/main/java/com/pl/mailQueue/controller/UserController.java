@@ -15,22 +15,27 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.List;
 import java.util.Locale;
 
 @Controller
 @RequiredArgsConstructor
+@RequestMapping("/user")
 public class UserController {
+
     @Autowired
     private UserServiceInterface userServiceInterface;
+
     @Autowired
     private ChangePasswordValidator changePasswordValidator;
+
     @Autowired
     MessageSource messageSource;
 
     @GetMapping("/profil")
-    @Secured(value = {"ROLE_ADMIN", "ROLE_USER", "ROLE_ADMIN_SHELTER"})
+    @Secured(value = {"ROLE_ADMIN", "ROLE_USER"})
     public String showUserProfilePage(Model model) {
         String userName = UserUtilities.getLoggedUser();
 
@@ -40,7 +45,6 @@ public class UserController {
         user.setRoleNr(roleNr);
         model.addAttribute("user", user);
         return "user/profil";
-
     }
 
     @GetMapping("/edit-password")
@@ -78,27 +82,23 @@ public class UserController {
     @GetMapping("/admin")
     @Secured(value = {"ROLE_ADMIN"})
     public String showAdminPage() {
+
         return "user/admin";
     }
 
     @GetMapping("/users")
     @Secured(value = {"ROLE_ADMIN"})
     public String openAdminUsersPage(Model model) {
-        List<User> userList = getAllUsers();
-        model.addAttribute("userList", userList);
-        return "user/users";
-    }
-
-
-    private List<User> getAllUsers() {
         List<User> userList = userServiceInterface.findAll();
         for (User users : userList) {
 
             Long nrRoli = users.getRoles().iterator().next().getId();
             users.setRoleNr(nrRoli);
         }
-        return userList;
+        model.addAttribute("userList", userList);
+        return "user/users";
     }
+
 
     @GetMapping("/delete/{id}")
     public String deleteUserById(@PathVariable("id") Long id) {

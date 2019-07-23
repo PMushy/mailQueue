@@ -1,0 +1,46 @@
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
+<%@ taglib prefix="s" uri="http://www.springframework.org/tags" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="spring" uri="http://www.springframework.org/tags" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link href="https://fonts.googleapis.com/css?family=Dokdo|Lato" rel="stylesheet">
+    <link rel="stylesheet" href="/resources/css/header.css"/>
+</head>
+<body>
+<div id="header">
+    <nav class="navigation">
+        <ul class="menu">
+            <li><a href="/index">Main page</a></li>
+
+            <sec:authorize access="hasRole('ROLE_ADMIN')">
+                <li><a href="/user/admin">Admin</a></li>
+            </sec:authorize>
+
+            <sec:authorize access="hasRole('ROLE_ADMIN')">
+                <li><a href="/mail/create">New mail</a></li>
+            </sec:authorize>
+
+            <sec:authorize access="hasRole('ROLE_ADMIN')">
+                <li><a href="/mail/mail-list">Mail queue</a></li>
+            </sec:authorize>
+
+            <sec:authorize access="hasRole('ANONYMOUS')">
+                <li><a href="/login">Login</a>&nbsp;&nbsp;</li>
+                <li><a href="/register">Register</a>&nbsp;&nbsp;</li>
+            </sec:authorize>
+
+            <sec:authorize access="isAuthenticated()">
+                <li><a href="/user/profil">Profil</a></li>
+                <li><a href="/logout">Logout</a></li>
+            </sec:authorize>
+        </ul>
+    </nav>
+</div>
+</body>
+</html>

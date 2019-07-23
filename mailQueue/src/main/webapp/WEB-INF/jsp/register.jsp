@@ -6,9 +6,8 @@
     <title>MailQueue - RegisterPage</title>
 </head>
 <body>
-<%--<%@include file="../fragments/header.jspf" %>--%>
+<%@include file="fragments/header.jspf" %>
 <h2 align="center">Register</h2>
-<p align="center"><c:out value="${message}"/></p>
 <sf:form id="usersForm" action="/adduser" modelAttribute="user" enctype="multipart/form-data" method="POST">
     <table width="500" border="0" cellpadding="4" cellspacing="1"
            align="center">
@@ -30,19 +29,17 @@
             <td width="130" align="right">Password</td>
             <td width="270" align="left"><sf:password path="password" size="28"/></td>
         </tr>
-
         <tr>
             <td colspan="2" align="center"><font color="red"><sf:errors path="password"/></font></td>
         </tr>
         <tr>
             <td colspan="2" align="center" bgcolor="#fff">
                 <input type="submit" value="Register" class="formbutton"/>
-                <input type="button" value="Cancel" class="formbutton"
-                       onclick="window.location.href='${pageContext.request.contextPath}/'"/>
+                <input type="reset" value="Cancel"/>
             </td>
         </tr>
     </table>
 </sf:form>
-<%--<%@include file="../fragments/footer.jspf" %>--%>
+<%@include file="fragments/footer.jspf" %>
 </body>
 </html>

@@ -69,7 +69,7 @@ public class UserService implements UserServiceInterface {
 
     @Override
     public UserDetails loadUserByUsername(String s) throws UsernameNotFoundException {
-        return (UserDetails) userRepository.findByEmail(s);
+        return userRepository.findByEmail(s);
     }
 
     public Long getLoggedUserId() {

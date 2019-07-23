@@ -3,6 +3,7 @@ package com.pl.mailQueue.domain.model;
 import lombok.Data;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 import javax.validation.constraints.Email;
@@ -13,17 +14,20 @@ import java.util.stream.Collectors;
 
 @Data
 @Entity
-public class User {
+public class User implements UserDetails {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "user_id")
     private Long id;
+
+    @NotNull
     private String nick;
 
     @NotNull
     @Email
     private String email;
+
     @NotNull
     private String password;
     @Transient
@@ -53,7 +57,7 @@ public class User {
     }
 
     public String getUsername() {
-        return nick;
+        return email;
     }
 
     public boolean isAccountNonExpired() {
