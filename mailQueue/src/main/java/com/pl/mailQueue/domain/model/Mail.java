@@ -15,11 +15,9 @@ public class Mail {
     private Long id;
 
     @NotNull
-    private String[] recipients;
+    private String recipients;
     // Nie jestem pewien jak jest adresat i nadawca po angielsku
-    @Transient
     private String sender;
-
     private String title;
     private String message;
 }
