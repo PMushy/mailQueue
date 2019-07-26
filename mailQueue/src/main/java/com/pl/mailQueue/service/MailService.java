@@ -18,7 +18,7 @@ public class MailService {
 
     private final MailRepository mailRepository;
     private final UserService userService;
-    private JavaMailSender javaMailSender;
+    private final JavaMailSender javaMailSender;
 
     public void create(Mail mail, Long loggedUserId) {
         Optional<User> user = userService.getUserById(loggedUserId);
