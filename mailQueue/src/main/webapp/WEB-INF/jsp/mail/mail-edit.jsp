@@ -1,12 +1,12 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
-    <link rel="stylesheet" type="text/css" href="../css/header.css"/>
     <title>Edit mail</title>
+    <link rel="stylesheet" href="/resources/css/main.css"/>
 </head>
 <body>
-<h2>Edit mail</h2>
 <%@include file="../fragments/header.jspf" %>
+<h2>Edit mail</h2>
 <form:form action="/mail/mail-edit/${mail.id}" method="POST" modelAttribute="mail">
     To: <form:input path="recipients"/> <br/>
     Title: <form:input path="title"/> <br/>

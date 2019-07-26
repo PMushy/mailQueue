@@ -2,8 +2,8 @@
 <%@ taglib prefix="from" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
-    <link rel="stylesheet" href="../resources/css/main.css"/>
     <title>New mail</title>
+    <link rel="stylesheet" href="../resources/css/main.css"/>
 </head>
 <body>
 <%@include file="../fragments/header.jspf" %>
