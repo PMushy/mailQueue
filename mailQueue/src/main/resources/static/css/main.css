@@ -1,0 +1,16 @@
+body {
+    font-family: 'Lato', sans-serif;
+
+    background: #2179CE;
+    background: -moz-linear-gradient(left, #2179CE 0%, #0DA49D 40%, #08C596 100%);
+    background: -webkit-linear-gradient(left, #2179CE 0%, #0DA49D 40%, #08C596 100%);
+    background: linear-gradient(to right, #2179CE 0%, #0DA49D 40%, #08C596 100%);
+
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+html, body {
+    height: 100%;
+}

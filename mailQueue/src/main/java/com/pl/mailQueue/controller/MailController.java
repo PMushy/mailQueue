@@ -80,6 +80,7 @@ public class MailController {
     }
 
     @PostMapping("/mail-edit/{id}")
+    @Secured(value = {"ROLE_ADMIN"})
     public String editMail(@ModelAttribute("owner") Mail mail) {
         mailService.editMail(mail);
 

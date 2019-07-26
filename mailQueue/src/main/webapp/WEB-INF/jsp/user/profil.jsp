@@ -7,8 +7,7 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <link rel="stylesheet" type="text/css" href="/resources/css/style.css"/>
-    <link rel="stylesheet" href="/resources/css/main.css"/>
+    <link rel="stylesheet" href="../resources/css/main.css"/>
     <title><s:message code="profil.userDane"/></title>
 </head>
 <body>

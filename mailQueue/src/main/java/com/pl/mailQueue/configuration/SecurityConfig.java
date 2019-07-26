@@ -49,12 +49,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         httpSec
                 .authorizeRequests()
                 .antMatchers("/").permitAll()
-                .antMatchers("/index").hasAuthority("ROLE_ADMIN")
-//                .antMatchers("/index").permitAll()
+                .antMatchers("/index").permitAll()
                 .antMatchers("/register/**").permitAll()
                 .antMatchers("/login").permitAll()
-                .antMatchers("/h2-console/**").permitAll()
                 .antMatchers("/src/main/resources/static/images/**").permitAll()
+                .antMatchers("/h2-console/**").hasAuthority("ROLE_ADMIN")
                 .antMatchers("/admin").hasAuthority("ROLE_ADMIN")
                 .antMatchers("/adduser").permitAll()
                 .antMatchers("/user/**").permitAll()
@@ -70,7 +69,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
     public void configure(WebSecurity webSec) {
         webSec.ignoring()
-                .antMatchers("/resources/**", "/static/**", "images/**",
+                .antMatchers("/resources/**",
                         "/src/main/webapp/WEB-INF/jsp/fragments/**");
     }
 

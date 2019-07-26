@@ -2,6 +2,7 @@
 <%@ taglib prefix="from" uri="http://www.springframework.org/tags/form" %>
 <html>
 <head>
+    <link rel="stylesheet" href="../resources/css/main.css"/>
     <title>New mail</title>
 </head>
 <body>

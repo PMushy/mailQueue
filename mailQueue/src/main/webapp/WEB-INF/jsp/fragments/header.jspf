@@ -9,13 +9,12 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link href="https://fonts.googleapis.com/css?family=Dokdo|Lato" rel="stylesheet">
     <link rel="stylesheet" href="../resources/css/header.css"/>
 </head>
 <body>
 <div id="header">
     <div>
-        <img src="resources/images/logo.png" alt="Logo" width="80" height="80"/>
+        <img src="../resources/images/logo.png" alt="Logo" />
     </div>
     <nav class="navigation">
         <ul class="menu">

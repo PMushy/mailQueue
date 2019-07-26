@@ -2,11 +2,12 @@
 <html>
 <head>
     <title>MailQueueApp</title>
+    <link rel="stylesheet" href="../resources/css/main.css"/>
 </head>
 <body>
 <%@include file="fragments/header.jspf" %>
 <section>
-    <h1>MailQueueApp</h1>
+    <h1 align="center">MailQueueApp</h1>
 </section>
 <%@include file="fragments/footer.jspf" %>
 </body>

@@ -1,28 +1,17 @@
-body {
-    font-family: 'Lato', sans-serif;
-    /*background-image: url("../images/background.jpg");*/
-    background-color: aliceblue;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    background-size: cover;
-
-    margin: 0;
-    padding: 0;
-    height: 100%;
-}
-
-html, body {
-    height: 100%;
-}
-
 #header {
     width: 100%;
-    background-color: royalblue;
+    background-color: rgba(255, 255, 255, .2);
+
+    /*background: #2179CE;*/
+    /*background: -moz-linear-gradient(left, #2179CE 0%, #0DA49D 40%, #08C596 100%);*/
+    /*background: -webkit-linear-gradient(left, #2179CE 0%, #0DA49D 40%, #08C596 100%);*/
+    /*background: linear-gradient(to right, #2179CE 0%, #0DA49D 40%, #08C596 100%);*/
+
     color: black;
     display: flex;
     justify-content: space-between;
-    height: 80px;
-    align-items: revert;
+    height: 77px;
+    align-items: center;
 }
 
 .navigation {
@@ -41,12 +30,12 @@ html, body {
 }
 
 .menu a {
-    color: black;
+    color: white;
     text-decoration: none;
+    transition: 300ms;
+    border-bottom: 1px solid transparent;
 }
 
 .menu a:hover {
-    transition: .5s;
-    color: lime;
-    text-decoration: underline;
+    border-color: white;
 }

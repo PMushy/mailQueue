@@ -3,6 +3,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
+    <link rel="stylesheet" href="../resources/css/main.css"/>
     <title>MailQueue - RegisterPage</title>
 </head>
 <body>
