@@ -63,6 +63,11 @@ public class UserService implements UserServiceInterface {
         userRepository.deleteById(id);
     }
 
+    @Override
+    public Optional<User> findUserById(Long id) {
+        return userRepository.findById(id);
+    }
+
     public Optional<User> getUserById(Long userId) {
         return userRepository.findById(userId);
     }
@@ -74,5 +79,9 @@ public class UserService implements UserServiceInterface {
 
     public Long getLoggedUserId() {
         return ((User) SecurityContextHolder.getContext().getAuthentication().getPrincipal()).getId();
+    }
+
+    public void editUser(User user) {
+        userRepository.save(user);
     }
 }
