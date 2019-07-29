@@ -23,8 +23,8 @@ public class UserRegisterValidator implements Validator {
     }
 
     @Override
-    public void validate(Object obj, Errors errors) {
-        User u = (User) obj;
+    public void validate(Object o, Errors errors) {
+        User u = (User) o;
 
         ValidationUtils.rejectIfEmpty(errors, "nick", "error.userNick.empty");
         ValidationUtils.rejectIfEmpty(errors, "email", "error.userEmail.empty");

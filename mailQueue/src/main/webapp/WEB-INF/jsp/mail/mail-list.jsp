@@ -1,5 +1,6 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="sec" uri="http://www.springframework.org/security/tags" %>
 <html>
 <head>
     <link rel="stylesheet" href="../resources/css/main.css"/>
@@ -19,9 +20,16 @@
     Recipient/s: ${mail.recipients} <br/>
     Title: ${mail.title} <br/>
     Message: ${mail.message} <br/>
-    <a href="/mail/mail-send/${mail.id}">Send</a>
-    <a href="/mail/mail-edit/${mail.id}">Edit</a>
-    <a href="/mail/mail-delete/${mail.id}">Delete</a>
+
+    <a href="/mail/mail-send/${mail.id}" class="button">Send</a>
+
+
+    <sec:authorize access="hasRole('ROLE_ADMIN')">
+        <a href="/mail/mail-edit/${mail.id}">Edit</a>
+    </sec:authorize>
+    <sec:authorize access="hasRole('ROLE_ADMIN')">
+        <a href="/mail/mail-delete/${mail.id}">Delete</a>
+    </sec:authorize>
     <br/><br/>
 </c:forEach>
 </body>

@@ -34,7 +34,7 @@
             <td colspan="2" align="center"><font color="red"><sf:errors path="password"/></font></td>
         </tr>
         <tr>
-            <td colspan="2" align="center" bgcolor="#fff">
+            <td colspan="2" align="center">
                 <input type="submit" value="Register" class="formbutton"/>
                 <input type="reset" value="Cancel"/>
             </td>

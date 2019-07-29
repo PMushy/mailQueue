@@ -3,6 +3,7 @@ package com.pl.mailQueue.domain.model;
 import lombok.Data;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
 @Data
@@ -15,8 +16,8 @@ public class Mail {
     private Long id;
 
     @NotNull
+    @Email
     private String recipients;
-    // Nie jestem pewien jak jest adresat i nadawca po angielsku
     private String sender;
     private String title;
     private String message;

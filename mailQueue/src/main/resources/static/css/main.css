@@ -1,5 +1,6 @@
 body {
     font-family: 'Lato', sans-serif;
+    color: white;
 
     background: #2179CE;
     background: -moz-linear-gradient(left, #2179CE 0%, #0DA49D 40%, #08C596 100%);
@@ -13,4 +14,12 @@ body {
 
 html, body {
     height: 100%;
+}
+
+a.button {
+    -webkit-appearance: button;
+    -moz-appearance: button;
+
+    text-decoration: none;
+    color: initial;
 }

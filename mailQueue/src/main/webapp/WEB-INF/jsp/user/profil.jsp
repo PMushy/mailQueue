@@ -8,12 +8,12 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <link rel="stylesheet" href="../resources/css/main.css"/>
-    <title><s:message code="profil.userDane"/></title>
+    <title>Profile</title>
 </head>
 <body>
 <%@include file="../fragments/header.jspf" %>
 <div align="center">
-    <h2><s:message code="profil.userDane"/></h2>
+    <h2>Profile</h2>
 </div>
 
 <table width="500" border="0" cellpadding="4" cellspacing="1" align="center">
@@ -34,7 +34,6 @@
             <c:out value="${user.nick}"/>
         </td>
     </tr>
-
     <tr>
         <td width="130" align="right">
             Active:

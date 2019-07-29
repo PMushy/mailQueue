@@ -9,12 +9,12 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../resources/css/header.css"/>
+    <link rel="stylesheet" href="/resources/css/header.css"/>
 </head>
 <body>
 <div id="header">
     <div>
-        <img src="../resources/images/logo.png" alt="Logo" />
+        <img src="/resources/images/logo.png" alt="Logo" />
     </div>
     <nav class="navigation">
         <ul class="menu">
@@ -23,7 +23,7 @@
                 <li><a href="/user/admin">Admin</a></li>
             </sec:authorize>
             <sec:authorize access="hasRole('ROLE_ADMIN')">
-                <li><a href="/mail/create">New mail</a></li>
+                <li><a href="/mail/create-mail">New mail</a></li>
             </sec:authorize>
             <sec:authorize access="hasRole('ROLE_ADMIN')">
                 <li><a href="/mail/mail-list">Mail queue</a></li>
