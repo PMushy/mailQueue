@@ -7,14 +7,7 @@
 </head>
 <body>
 <%@include file="../fragments/header.jspf" %>
-<h2>Edit mail</h2>
-<%--<form:form action="/mail/mail-edit/${mail.id}" method="POST" modelAttribute="mail">--%>
-<%--    To: <form:input path="recipients"/> <br/>--%>
-<%--    Title: <form:input path="title"/> <br/>--%>
-<%--    Message: <form:input path="message"/> <br/>--%>
-<%--    <form:hidden path="id"/>--%>
-<%--    <input type="submit" value="Save"/>--%>
-<%--</form:form>--%>
+<h2 align="center">Edit mail</h2>
 <form action="/mail/mail-edit/${mail.id}" method="POST" modelAttribute="mail">
     <form:hidden path="mail.id"/>
     <table width="350" border="0" cellpadding="4" cellspacing="1" align="center">
@@ -44,7 +37,7 @@
             </td>
         </tr>
         <tr>
-            <td colspan="2" align="center" bgcolor="#ffffff">
+            <td colspan="2" align="center">
                 <input type="submit" value="Save"/>
                 <input type="button" value="Back" onclick="history.back()"/></td>
         </tr>

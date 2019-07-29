@@ -17,6 +17,7 @@ html, body {
 }
 
 a.button {
+    width: 70px;
     -webkit-appearance: button;
     -moz-appearance: button;
 

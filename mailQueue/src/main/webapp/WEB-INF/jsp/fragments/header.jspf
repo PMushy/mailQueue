@@ -14,7 +14,7 @@
 <body>
 <div id="header">
     <div>
-        <img src="/resources/images/logo.png" alt="Logo" />
+        <img src="/resources/images/logo.png" alt="Logo"/>
     </div>
     <nav class="navigation">
         <ul class="menu">
@@ -22,10 +22,10 @@
             <sec:authorize access="hasRole('ROLE_ADMIN')">
                 <li><a href="/user/admin">Admin</a></li>
             </sec:authorize>
-            <sec:authorize access="hasRole('ROLE_ADMIN')">
+            <sec:authorize access="hasRole('ROLE_ADMIN') OR hasRole('ROLE_USER')">
                 <li><a href="/mail/create-mail">New mail</a></li>
             </sec:authorize>
-            <sec:authorize access="hasRole('ROLE_ADMIN')">
+            <sec:authorize access="hasRole('ROLE_ADMIN') OR hasRole('ROLE_USER')">
                 <li><a href="/mail/mail-list">Mail queue</a></li>
             </sec:authorize>
             <sec:authorize access="hasRole('ANONYMOUS')">
