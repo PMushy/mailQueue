@@ -14,6 +14,11 @@
 <sec:authorize access="hasRole('ROLE_ADMIN')">
     <li><a href="/user/users">Users</a>&nbsp;&nbsp;</li>
 </sec:authorize>
+
+<sec:authorize access="hasRole('ROLE_ADMIN')">
+    <li><a href="/mail/mail-send-all">Send all</a>&nbsp;&nbsp;</li>
+</sec:authorize>
+
 <%@include file="../fragments/footer.jspf" %>
 </body>
 </html>

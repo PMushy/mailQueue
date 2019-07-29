@@ -10,7 +10,7 @@
 <h2 align="center">Users</h2>
 
 <table width="1000" border="0" cellpadding="6" cellspacing="2" align="center">
-    <tr bgcolor="#ffddcc">
+    <tr>
         <td width="40" align="center"></td>
         <td width="40" align="center"><b>User id</b></td>
         <td width="190" align="center"><b>Nick</b></td>

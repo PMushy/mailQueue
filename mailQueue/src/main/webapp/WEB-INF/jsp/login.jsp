@@ -40,8 +40,8 @@
             </td>
         </tr>
         <tr>
-            <td colspan="2" align="center" bgcolor="#ffffff"><input
-                    type="submit" value="Login"/></td>
+            <td colspan="2" align="center">
+                <input type="submit" value="Login"/></td>
         </tr>
     </table>
 </form>
